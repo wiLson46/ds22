@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="h-100" lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clase 1 + Clase 2</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="d-flex flex-column h-100">
+  <header>
+    <nav id="navbar" class="navbar bg-primary mb-5" data-bs-theme="dark">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Vanguardia Valiente</span> <button id="ccButton" onclick="colorChange()"
+          type="button" class="btn btn-outline-light ms-auto">Cambiar color</button>
+      </div>
+    </nav>
+  </header>
+  <main class="container d-flex flex-shrink-0">
+
+    <aside>
+      <section class="imgCont">
+        <img class="promoImg" src="sh.jpg">
+      </section>
+    </aside>
+
+    <section class="ms-5">
+
+      <article>
+        <h1>Necesitas un superhéroe?</h1>
+        <h2>Contrata a nuestro equipo</h2>
+        <p class="fs-7">Bienvenido a <b>Vanguardia Valiente</b>, donde lo imposible se hace realidad. Nuestro equipo de
+          <a href="https://es.wikipedia.org/wiki/Superh%C3%A9roe">superhéroes</a> está
+          listo para enfrentar cualquier desafío y resultados extraordinarios. ¡Descubre el poder de la excelencia
+          heroica!</p>
+
+      </article>
+      <article>
+        <ul>
+          <li>
+            <p class="fs-7"><b>Soluciones Innovadoras:</b> Nuestro equipo de superhéroes ofrece soluciones creativas y
+              fuera de lo común
+              para cualquier desafío empresarial.</p>
+          </li>
+          <li>
+            <p class="fs-7"><b>Respuesta Inmediata:</b> Disponibilidad 24/7 para asegurar que tu empresa reciba
+              asistencia instantánea en
+              momentos críticos.</p>
+          </li>
+          <li>
+            <p class="fs-7"><b>Experiencia Diversa:</b> Cada superhéroe tiene habilidades únicas, permitiendo un enfoque
+              multifacético para
+              resolver problemas.</p>
+          </li>
+          <li>
+            <p class="fs-7"><b>Resultados Garantizados:</b> Compromiso con la excelencia y la satisfacción del cliente,
+              con resultados
+              medibles y un impacto positivo duradero.</p>
+          </li>
+        </ul>
+      </article>
+      <article>
+        <table id="tablaDesc" class="table table-bordered table-hover border-primary">
+          <thead>
+            <tr>
+              <th class="mediaTabla">
+                <p class="noMarginText">Superhéroe</p>
+              </th>
+              <th class="mediaTabla">
+                <p class="noMarginText">Superpoderes</p>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <p class="noMarginText fs-7">Capitán Estrategia</p>
+              </td>
+              <td>
+                <p class="noMarginText fs-7">Visión de futuro, planificación maestra</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="noMarginText fs-7">Señora Cibernética</p>
+              </td>
+              <td>
+                <p class="noMarginText fs-7">Hacking ético, control de tecnología</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="noMarginText fs-7">El Guardián Verde</p>
+              </td>
+              <td>
+                <p class="noMarginText fs-7">Manipulación de plantas, curación</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="noMarginText fs-7">Rayo Veloz</p>
+              </td>
+              <td>
+                <p class="noMarginText fs-7">Supervelocidad, viaje en el tiempo</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="noMarginText fs-7">La Sombra</p>
+              </td>
+              <td>
+                <p class="noMarginText fs-7">Invisibilidad, espionaje</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="noMarginText fs-7">Titanio</p>
+              </td>
+              <td>
+                <p class="noMarginText fs-7">Fuerza sobrehumana, resistencia</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+      <article class="d-flex justify-content-end">
+
+        <button id="botonContratar" type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Contratar el servicio
+        </button>
+      </article>
+
+    </section>
+
+      <!-- aca se encuentra la estructura del modal, oculto. -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Suscripción</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="row g-3">
+              <div class="col-md-6">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="name">
+              </div>
+              <div class="col-md-6">
+                <label for="surname" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="surname">
+              </div>
+              <div class="col-md-6">
+                <label for="age" class="form-label">Edad</label>
+                <input type="number" class="form-control" id="age">
+              </div>
+              <div class="col-md-6">
+                <label for="radioDefault1" class="form-label">Sexo</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="radioDefault1" id="radioDefault1">
+                  <label class="form-check-label" for="radioDefault1">
+                    Hombre
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="radioDefault2" id="radioDefault2">
+                  <label class="form-check-label" for="radioDefault2">
+                    Mujer
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email">
+                <div id="emailHelp" class="form-text">No lo vamos a compartir con ningun villano!</div>
+              </div>
+              <div class="col-md-6">
+                <label for="info" class="form-label">Cuentanos tu problema</label>
+                <textarea class="form-control" id="info" style="height: 100px"></textarea>
+              </div>
+              <div class="col-md-6">
+                <label for="city" class="form-label">Ciudad</label>
+                <input type="text" class="form-control" id="city">
+              </div>
+              <div class="col-md-6">
+                <label for="state" class="form-label">Provincia</label>
+                <select id="state" class="form-select">
+                  <option value="s">Santa Fe</option>
+                  <option value="e">Entre Rios</option>
+                  <option value="c">Cordoba</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="cuotas" class="form-label">En cuantas cuotas va a abonar</label>
+                <input type="number" class="form-control" id="cuotas">
+              </div>
+              <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="notifCheck">
+                  <label class="form-check-label" for="notifCheck">
+                    Recibir notificaciones del equipo
+                  </label>
+                </div>
+              </div>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button id="subBut" type="submit" class="btn btn-primary btn-lg">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer id="foot" class="footer mt-auto py-3 bg-primary text-white d-flex align-items-center justify-content-center">
+    <p class="noMarginText">Wilson Eric Sola - DS 2-2 - Clase 1 + Clase 2</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
