@@ -88,8 +88,6 @@ function showing() {
 
 }
 
-
-
 // EJERCICIO 7
 
 document.querySelector('#buttonLimpiarLista').addEventListener('click', limpia);
