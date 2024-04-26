@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Manipulación del DOM con javascript</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="container">
+    <article>
+        <h1>Título de ejemplo</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+            risus leo, efficitur id justo et, semper tristique velit. Nam
+            pharetra turpis at sem sollicitudin, vel auctor leo condimentum.
+            Maecenas tristique facilisis tempor. Maecenas scelerisque leo nisi,
+            eu mattis velit pharetra suscipit. Ut dignissim sodales sodales.
+            Pellentesque venenatis tortor erat, sed blandit est porta quis.
+            Integer odio mi, efficitur ut lectus ac, tempor feugiat libero.</p>
+        <p>Vestibulum at erat nulla. Aliquam finibus ullamcorper urna, at
+            scelerisque purus faucibus vitae. Phasellus id augue non ex blandit
+            semper vel eget tellus. Sed hendrerit, est non tincidunt rhoncus,
+            libero elit vulputate dolor, sed feugiat nisl leo ac enim. Aenean
+            sed urna nunc. Nunc ullamcorper, mi sit amet eleifend gravida,
+            metus lacus faucibus magna, at vehicula lacus mi et odio. Sed
+            convallis, turpis nec ultrices dapibus, ipsum nisi viverra leo,
+            eget convallis ipsum nisi eu sem. Aliquam tristique at ligula id
+            mattis. Vivamus augue quam, malesuada sit amet feugiat vel,
+            volutpat eu turpis. Praesent sit amet magna ac nunc ornare
+            sagittis. Donec faucibus vulputate est sit amet mollis. Suspendisse
+            id semper ligula. Nullam faucibus elit vel augue fermentum
+            accumsan. Phasellus suscipit imperdiet velit ut egestas. Ut augue
+            libero, rhoncus a pharetra ac, aliquam sit amet mauris. Cras
+            interdum volutpat accumsan.</p>
+        <button id="colores" type="button" class="btn btn-primary">Colorear</button>
+
+        <figure class="col-md-8 offset-md-2">
+            <img id="imagenBase" src="carita.png" alt="Imagen de una carita feliz">
+            <button id="imgChica" type="button" class="btn btn-warning">Imagen chica</button>
+            <button id="imgGrande" type="button" class="btn btn-danger">Imagen grande</button>
+            <button id="hidden" type="button" class="btn btn-primary mt-5 d-none">Mostrar Imagen</button>
+
+        </figure>
+        <p>Cras mattis ante quis vehicula lacinia. Sed eget neque non augue
+            iaculis egestas ut in justo. Nam nec nisl et dolor aliquam
+            fermentum quis nec enim. Integer mauris ante, fermentum eget neque
+            ut, venenatis vehicula dui. Ut imperdiet tempor aliquet. Phasellus
+            congue est et ligula maximus, eu sodales ante consequat. Integer
+            rutrum congue dui in lacinia. Maecenas aliquet laoreet enim eget
+            varius. Cras at porttitor diam. Sed a turpis eget odio pretium
+            sagittis sit amet consequat arcu. Donec quis felis aliquet, congue
+            elit congue, fringilla leo.</p>
+        <p>Class aptent taciti sociosqu ad litora torquent per conubia
+            nostra, per inceptos himenaeos. Mauris tempor tortor eu arcu
+            dignissim, a pharetra diam mollis. Duis maximus, nisl a bibendum
+            laoreet, urna purus pulvinar risus, id vestibulum leo elit at
+            tellus. Maecenas blandit commodo vulputate. Aenean ipsum orci,
+            ultricies sit amet sem id, mollis faucibus justo. Donec ac felis
+            volutpat, convallis tortor et, hendrerit libero. Proin non ligula
+            nunc. Pellentesque tellus ante, fringilla vel purus nec, lacinia
+            lobortis justo. Vestibulum facilisis laoreet felis, non rhoncus
+            dolor convallis a. Nullam nec ipsum vitae est vestibulum tincidunt.
+            Mauris nisl metus, cursus quis ex non, hendrerit faucibus nibh.</p>
+        <p>Duis molestie aliquam mi, vel volutpat ipsum tincidunt
+            facilisis. Ut iaculis dui vel nibh rhoncus blandit. Sed eget
+            eleifend tellus. Integer id leo vel felis mattis varius ut ut
+            lorem. Donec pellentesque at justo quis consequat. Morbi interdum
+            sit amet turpis at porta. Nam ultricies ligula eget semper
+            sagittis. Phasellus fringilla hendrerit elit a cursus. Nam quis sem
+            hendrerit, blandit turpis porttitor, vulputate odio. Cras
+            pellentesque maximus dignissim. In sed euismod felis. Curabitur
+            lacinia quam ut magna scelerisque aliquam. Phasellus lacinia
+            dignissim ullamcorper. Etiam risus ex, tincidunt eleifend leo sed,
+            tincidunt tincidunt ex. Curabitur ultrices ullamcorper ipsum eu
+            consequat.</p>
+        <br>
+        <hr>
+        <h1>Esta lista va a ser modificada dinámicamente:</h1>
+        <h2>Esta lista tiene <span id="cantidad">3</span> elementos</h2>
+        <ol id="lista">
+            <li class="elemento">Este es el primer elemento</li>
+            <li class="elemento">Este es el segundo elemento</li>
+            <li class="elemento">Este es el tercer elemento</li>
+
+        </ol>
+        <hr>
+        <div class="input-group mb-3">
+            <input id="inputAdd" type="text" class="form-control" placeholder="texto para agregar">
+            <button id="buttonAdd" class="btn btn-outline-secondary" type="button">Agregar item a la lista</button>
+        </div>
+        <div class="input-group mb-3">
+            <input id="inputDelete" type="number" class="form-control" placeholder="numero de lista a borrar">
+            <button id="buttonDelete" class="btn btn-outline-secondary" type="button">Borrar item de la lista</button>
+        </div>
+        <button id="buttonLimpiarLista" class="btn btn-outline-info mb-5" type="button">Limpiar</button>
+
+    </article>
+
+    <script src="script.js">
+    </script>
+</body>
+
+</html>
