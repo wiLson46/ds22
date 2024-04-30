@@ -1,38 +1,51 @@
-// Create an async function to fetch data
+
 document.querySelector('#goPoke').addEventListener('click', fetchData);
 
 function fetchData() {
+
     let valor = document.getElementById('inputPoke').value;
-
-    console.log('valor de input:', valor);
-
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/' + valor;
 
-    console.log('Fetching data from:', apiUrl);
-
-    // Show "loading result" message
     let loadingMessage = document.createElement('div');
-    loadingMessage.textContent = 'Loading result...';
+    loadingMessage.innerHTML = '<img src="loader.gif" alt="Loading..." class="loaderSpin" > Cargando Resultado...';
     let container = document.getElementById('board');
     container.appendChild(loadingMessage);
 
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
-            // Store the fetched data in the variable 'x'
-            let x = data; // You can access specific properties from 'data' as needed
 
-            // Remove the "loading result" message
+            function checkType(mainType) {
+                if (mainType == 'fire') {
+                    return divElement.classList.add("fireType");
+                } else if (mainType == 'water') {
+                    return divElement.classList.add("waterType");
+                } else if (mainType == 'grass') {
+                    return divElement.classList.add("grassType");
+                }
+            };
+
+            let x = data;
+
             container.removeChild(loadingMessage);
 
-            // Create a div element
-            let divElement = document.createElement('div');
-            divElement.textContent = 'Pokemon name:' + x.name; // Display the ability name
+            let imgData = x.sprites.front_default;
+            let pokeTypes = x.types.map(type => type.type.name); // Access all types of the Pokemon
+            let pokeType = pokeTypes.join(', '); // Join the types with a comma
+            let mainType = x.types[0].type.name;
 
-            // Append the div to the container
+            let divElement = document.createElement('div');
+            divElement.classList.add("pokeCard", "d-flex", "flex-column", "m-2", "justify-content-center", "align-items-center");
+            divElement.innerHTML = '<p class="noMarginText">Pokemon name: ' + x.name + '</p>' + '<img src="' + imgData + '" alt="pokemon" class="imgPoke" >' + '<p class="noMarginText">Pokemon type: ' + pokeType + '</p>';
+            checkType(mainType);
             container.appendChild(divElement);
+
         })
+
         .catch(error => {
             console.error('Error fetching data:', error);
         });
-}
+
+        document.getElementById('inputPoke').value = "";
+        document.getElementById('inputPoke').focus();
+};
