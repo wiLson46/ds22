@@ -1,10 +1,12 @@
 // Create an async function to fetch data
+document.querySelector('#goPoke').addEventListener('click', fetchData);
+
 function fetchData() {
-    let valor = document.getElementById('input').value;
+    let valor = document.getElementById('inputPoke').value;
 
     console.log('valor de input:', valor);
 
-    let apiUrl = 'https://pokeapi.co/api/v2/ability/' + valor;
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/' + valor;
 
     console.log('Fetching data from:', apiUrl);
 
@@ -25,7 +27,7 @@ function fetchData() {
 
             // Create a div element
             let divElement = document.createElement('div');
-            divElement.textContent = `Ability Name: ${x.name}`; // Display the ability name
+            divElement.textContent = 'Pokemon name:' + x.name; // Display the ability name
 
             // Append the div to the container
             container.appendChild(divElement);
@@ -34,7 +36,3 @@ function fetchData() {
             console.error('Error fetching data:', error);
         });
 }
-  
-  // Call the fetchData function
-  fetchData();
-  
