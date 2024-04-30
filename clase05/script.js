@@ -36,7 +36,7 @@ function fetchData() {
 
             let divElement = document.createElement('div');
             divElement.classList.add("pokeCard", "d-flex", "flex-column", "m-2", "justify-content-center", "align-items-center");
-            divElement.innerHTML = '<p class="noMarginText">Pokemon name: ' + x.name + '</p>' + '<img src="' + imgData + '" alt="pokemon" class="imgPoke" >' + '<p class="noMarginText">Pokemon type: ' + pokeType + '</p>';
+            divElement.innerHTML = '<p class="noMarginText"><b>Pokemon name: </b>' + x.name + '</p>' + '<img src="' + imgData + '" alt="pokemon" class="imgPoke" >' + '<p class="noMarginText"><b>Type: </b>' + pokeType + '</p>';
             checkType(mainType);
             container.appendChild(divElement);
 
