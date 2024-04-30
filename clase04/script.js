@@ -68,8 +68,8 @@ document.querySelector('#imagenBase').addEventListener('click', dissapear);
 
 function dissapear() {
 
-    document.getElementById('imagenBase').classList.remove("d-block")
-    document.getElementById('hidden').classList.remove("d-none")
+    document.getElementById('imagenBase').classList.remove("d-block");
+    document.getElementById('hidden').classList.remove("d-none");
     document.getElementById('imagenBase').classList.add("d-none");
     document.getElementById('hidden').classList.add("d-block");
     
@@ -81,8 +81,8 @@ document.querySelector('#hidden').addEventListener('click', showing);
 
 function showing() {
 
-    document.getElementById('imagenBase').classList.remove("d-none")
-    document.getElementById('hidden').classList.remove("d-block")
+    document.getElementById('imagenBase').classList.remove("d-none");
+    document.getElementById('hidden').classList.remove("d-block");
     document.getElementById('imagenBase').classList.add("d-block");
     document.getElementById('hidden').classList.add("d-none");
 
@@ -96,5 +96,5 @@ function limpia() {
 
     let lista = document.querySelectorAll('#lista li');
     lista.forEach (elemento => elemento.remove());
-
+    chequearCantidad();
 }
