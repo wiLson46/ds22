@@ -10,9 +10,7 @@ p.noMarginText {
     padding: 0;
 }
 
-.cuadro {
-    border: 2px solid blue;
-    border-radius: 15px;
-    width: 100px;
-    height: 100px;
+.loaderSpin {
+    width: 24px;
+    height: 24px;
 }

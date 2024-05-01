@@ -1,0 +1,50 @@
+* {
+    font-family: "Rubik", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p.noMarginText {
+    margin: 0;
+    padding: 0;
+}
+
+.cuadro {
+    border: 2px solid blue;
+    border-radius: 15px;
+    width: 100px;
+    height: 100px;
+}
+
+.loaderSpin {
+    width: 24px;
+    height: 24px;
+}
+
+.pokeCard {
+    width: 250px;
+    height: 250px;
+    border-radius: 25px;
+    border: 2px solid blue;
+}
+
+.imgPoke {
+    width: 150px;
+    height: 150px;
+}
+
+.fireType {
+    border: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.waterType {
+    border: 2px solid blue;
+    background-color: rgba(0, 0, 255, 0.2);
+}
+
+.grassType {
+    border: 2px solid green;
+    background-color: rgba(0, 255, 0, 0.2);
+}
