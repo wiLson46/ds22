@@ -1,7 +1,11 @@
 let id = 0;
 
 document.addEventListener('DOMContentLoaded', fetchEpisodes);
-document.addEventListener('click', callOne);
+document.addEventListener('click', function(event) {
+    if (event.target.tagName === 'button') {
+        callOne(event.target.id);
+    }
+});
 
 
 let apiAllEpisodes = 'https://rickandmortyapi.com/api/episode/';
@@ -30,7 +34,7 @@ function mostrarEpisodios(data) {
     document.querySelector('#board').appendChild(lista);
 
 }
-
+    
 function callOne(id) {
 
     id = id;
