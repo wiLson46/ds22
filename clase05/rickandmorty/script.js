@@ -34,7 +34,7 @@ function mostrarEpisodios(data) {
 function callOne(id) {
 
     id = id;
-    apiEpi = 'https://rickandmortyapi.com/api/episode/' + id;
+    apiEpi = apiAllEpisodes + id;
     fetchEpi();
 
 }
