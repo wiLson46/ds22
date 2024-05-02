@@ -36,11 +36,10 @@ function callOne(id) {
     id = id;
     apiAllEpi = 'https://rickandmortyapi.com/api/episode/' + id;
     fetchEpi();
-    
+
 }
 
 function fetchEpi() {
-
     fetch(apiAllEpi)
         .then(response => response.json())
         .then(data => mostrarDataEpisodio(data))
@@ -48,11 +47,9 @@ function fetchEpi() {
 }
 
 function mostrarDataEpisodio(data) {
-
     document.querySelector('#board').innerHTML = '';
     let lista = document.getElementById('board');
-    let item;
+    let item = document.createElement('div'); // Add this line to create a new div element
     item.innerHTML = '<div class="m-2">' + data.air_date + '</div>';
     lista.appendChild(item);
-
 };
