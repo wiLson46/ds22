@@ -21,7 +21,7 @@ function mostrarEpisodios(data) {
     data.results.forEach(unDato => {
         item = document.createElement('li');
         id = unDato.id;
-        item.innerHTML = unDato.episode + ' - ' + unDato.name + ' - ' + '<button id="'+ id +'" type="button" class="btn btn-primary btn-sm" onclick="callOne(id)"> Ver Data </button>';
+        item.innerHTML = unDato.episode + ' - ' + unDato.name + ' - ' + '<button id="' + id + '" type="button" class="btn btn-primary btn-sm" onclick="callOne(id)"> Ver Data </button>';
         item.classList.add('m-2')
         lista.appendChild(item);
 
@@ -36,6 +36,7 @@ function callOne(id) {
     id = id;
     apiAllEpi = 'https://rickandmortyapi.com/api/episode/' + id;
     fetchEpi();
+    
 }
 
 function fetchEpi() {
@@ -54,4 +55,4 @@ function mostrarDataEpisodio(data) {
     item.innerHTML = '<div class="m-2">' + data.air_date + '</div>';
     lista.appendChild(item);
 
-    };
+};
