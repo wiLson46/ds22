@@ -50,6 +50,7 @@ function mostrarDataEpisodio(data) {
     document.querySelector('#board').innerHTML = '';
     let lista = document.getElementById('board');
     let item = document.createElement('div');
-    item.innerHTML = '<div class="m-2">' + '<b>Primera vez en aire: </b>' + data.air_date + '</div>';
+    item.innerHTML = '<b>Primera vez en aire: </b>' + data.air_date;
+    item.classList.add('m-2')
     lista.appendChild(item);
-};
+};  
