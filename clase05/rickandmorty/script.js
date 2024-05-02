@@ -49,7 +49,7 @@ function fetchEpi() {
 function mostrarDataEpisodio(data) {
     document.querySelector('#board').innerHTML = '';
     let lista = document.getElementById('board');
-    let item = document.createElement('div'); // Add this line to create a new div element
+    let item = document.createElement('div');
     item.innerHTML = '<div class="m-2">' + data.air_date + '</div>';
     lista.appendChild(item);
 };
