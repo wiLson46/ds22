@@ -1,8 +1,11 @@
-
+let id = 0;
 
 document.addEventListener('DOMContentLoaded', fetchEpisodes);
+document.addEventListener('click', callOne);
+
 
 let apiAllEpisodes = 'https://rickandmortyapi.com/api/episode/';
+let apiAllEpi = '';
 
 function fetchEpisodes() {
     fetch(apiAllEpisodes)
@@ -17,10 +20,38 @@ function mostrarEpisodios(data) {
 
     data.results.forEach(unDato => {
         item = document.createElement('li');
-        item.innerHTML = unDato.episode + ' - ' + unDato.name;
+        id = unDato.id;
+        item.innerHTML = unDato.episode + ' - ' + unDato.name + ' - ' + '<button id="'+ id +'" type="button" class="btn btn-primary btn-sm" onclick="callOne(id)"> Ver Data </button>';
+        item.classList.add('m-2')
         lista.appendChild(item);
-        console.log(data);
+
     });
 
     document.querySelector('#board').appendChild(lista);
+
 }
+
+function callOne(id) {
+
+    id = id;
+    apiAllEpi = 'https://rickandmortyapi.com/api/episode/' + id;
+    fetchEpi();
+}
+
+function fetchEpi() {
+
+    fetch(apiAllEpi)
+        .then(response => response.json())
+        .then(data => mostrarDataEpisodio(data))
+        .catch(error => console.error(error));
+}
+
+function mostrarDataEpisodio(data) {
+
+    document.querySelector('#board').innerHTML = '';
+    let lista = document.getElementById('board');
+    let item;
+    item.innerHTML = '<div class="m-2">' + data.air_date + '</div>';
+    lista.appendChild(item);
+
+    };
