@@ -5,7 +5,7 @@ document.addEventListener('click', callOne);
 
 
 let apiAllEpisodes = 'https://rickandmortyapi.com/api/episode/';
-let apiAllEpi = '';
+let apiEpi = '';
 
 function fetchEpisodes() {
     fetch(apiAllEpisodes)
@@ -34,13 +34,13 @@ function mostrarEpisodios(data) {
 function callOne(id) {
 
     id = id;
-    apiAllEpi = 'https://rickandmortyapi.com/api/episode/' + id;
+    apiEpi = 'https://rickandmortyapi.com/api/episode/' + id;
     fetchEpi();
 
 }
 
 function fetchEpi() {
-    fetch(apiAllEpi)
+    fetch(apiEpi)
         .then(response => response.json())
         .then(data => mostrarDataEpisodio(data))
         .catch(error => console.error(error));
