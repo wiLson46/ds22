@@ -1,51 +1,87 @@
 
-document.querySelector('#goPoke').addEventListener('click', fetchData);
+document.querySelector('#goSearch').addEventListener('click', buscar);
+let container = document.getElementById('board');
+let loadingMessage;
+let id;
+let nombreAut;
+let donde;
 
-function fetchData() {
+function load() { //agregar donde ()
 
-    let valor = document.getElementById('inputPoke').value;
-    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/' + valor;
-
-    let loadingMessage = document.createElement('div');
+   // donde =
+        loadingMessage = document.createElement('div');
     loadingMessage.innerHTML = '<img src="loader.gif" alt="Loading..." class="loaderSpin" > Cargando Resultado...';
-    let container = document.getElementById('board');
     container.appendChild(loadingMessage);
+  // document.querySelector('#contenidoModal').appendChild(lista); arreglar
+}
 
+function llamadaIndividual(id) {
+
+    id = id;
+
+    let valor = document.getElementById('inputAutor').value;
+    let apiUrl = 'https://openlibrary.org/search.json?author=' + valor;
     fetch(apiUrl)
         .then(response => response.json())
-        .then(data => {
+        .then(data => { mostrarIndividual(data); })
+        .catch(error => { console.error('Error fetching data:', error) });
 
-            function checkType(mainType) {
-                if (mainType == 'fire') {
-                    return divElement.classList.add("fireType");
-                } else if (mainType == 'water') {
-                    return divElement.classList.add("waterType");
-                } else if (mainType == 'grass') {
-                    return divElement.classList.add("grassType");
-                }
-            };
+}
 
-            let x = data;
+function mostrarIndividual(data) {
 
-            container.removeChild(loadingMessage);
+    let lista = document.createElement('ul');
+    let item;
 
-            let imgData = x.sprites.front_default;
-            let pokeTypes = x.types.map(type => type.type.name); // Access all types of the Pokemon
-            let pokeType = pokeTypes.join(', '); // Join the types with a comma
-            let mainType = x.types[0].type.name;
+    data.docs.forEach(unDato => {
+        item = document.createElement('li');
+        item.classList.add('m-2');
 
-            let divElement = document.createElement('div');
-            divElement.classList.add("pokeCard", "d-flex", "flex-column", "m-2", "justify-content-center", "align-items-center");
-            divElement.innerHTML = '<p class="noMarginText"><b>Pokemon name: </b>' + x.name + '</p>' + '<img src="' + imgData + '" alt="pokemon" class="imgPoke" >' + '<p class="noMarginText"><b>Type: </b>' + pokeType + '</p>';
-            checkType(mainType);
-            container.appendChild(divElement);
+        item.innerHTML = unDato.title + ' (' + unDato.first_publish_year + ')';
+        lista.appendChild(item);
 
-        })
+    });
 
-        .catch(error => {
-            console.error('Error fetching data:', error);
-        });
+    container.removeChild(loadingMessage);
+    document.querySelector('#contenidoModal').appendChild(lista);
 
-        document.getElementById('inputPoke').value = "";
-        document.getElementById('inputPoke').focus();
-};
+
+}
+
+function buscar() {
+
+    load();
+    let valor = document.getElementById('inputAutor').value;
+    let apiUrl = 'https://openlibrary.org/search.json?author=' + valor;
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => { mostrar(data); })
+        .catch(error => { console.error('Error fetching data:', error) });
+
+}
+
+// se puede usar lo que ya tenia. agarrar title y publish year
+
+function mostrar(data) {
+
+    container.removeChild(loadingMessage);
+
+    let lista = document.createElement('ul');
+    let item;
+
+    data.docs.forEach(unDato => {
+        item = document.createElement('li');
+        item.classList.add('m-2');
+
+        id = unDato.author_key;
+
+        item.innerHTML = unDato.author_name + ' - ' + '<button id="' + id + '" type="button" class="btn btn-primary btn-sm" onclick="llamadaIndividual(id)" data-bs-toggle="modal" data-bs-target="#elModal"> Ver Data </button>';
+        lista.appendChild(item);
+    });
+
+    document.querySelector('#board').appendChild(lista);
+
+}
+
+document.getElementById('inputAutor').value = "";
+document.getElementById('inputAutor').focus();
