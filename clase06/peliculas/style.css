@@ -9,10 +9,3 @@ p.noMarginText {
     margin: 0;
     padding: 0;
 }
-
-.cuadro {
-    border: 2px solid blue;
-    border-radius: 15px;
-    width: 100px;
-    height: 100px;
-}
