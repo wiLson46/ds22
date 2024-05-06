@@ -1,4 +1,3 @@
-
 document.querySelector('#goSearch').addEventListener('click', buscar);
 let container = document.getElementById('board');
 let loadingMessage;
@@ -6,13 +5,12 @@ let id;
 let nombreAut;
 let donde;
 
-function load() { //agregar donde ()
+function load() {
 
-   // donde =
-        loadingMessage = document.createElement('div');
+    loadingMessage = document.createElement('div');
     loadingMessage.innerHTML = '<img src="loader.gif" alt="Loading..." class="loaderSpin" > Cargando Resultado...';
     container.appendChild(loadingMessage);
-  // document.querySelector('#contenidoModal').appendChild(lista); arreglar
+
 }
 
 function llamadaIndividual(id) {
@@ -42,9 +40,7 @@ function mostrarIndividual(data) {
 
     });
 
-    container.removeChild(loadingMessage);
     document.querySelector('#contenidoModal').appendChild(lista);
-
 
 }
 
@@ -59,8 +55,6 @@ function buscar() {
         .catch(error => { console.error('Error fetching data:', error) });
 
 }
-
-// se puede usar lo que ya tenia. agarrar title y publish year
 
 function mostrar(data) {
 
