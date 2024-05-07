@@ -9,3 +9,14 @@ p.noMarginText {
     margin: 0;
     padding: 0;
 }
+
+.imgItem {
+    width: 200px;
+    height: 200px;
+}
+
+.cuadro {
+    border: 2px solid blue;
+    border-radius: 15px;
+
+}
