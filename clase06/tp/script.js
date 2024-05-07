@@ -48,7 +48,7 @@ function buscar() {
 
     load();
     let valor = document.getElementById('inputAutor').value;
-    let apiUrl = 'https://openlibrary.org/search.json?author=' + valor;
+    let apiUrl = 'https://openlibrary.org/search/authors.json?q=' + valor;
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => { mostrar(data); })
@@ -67,9 +67,9 @@ function mostrar(data) {
         item = document.createElement('li');
         item.classList.add('m-2');
 
-        id = unDato.author_key;
+        id = unDato.key;
 
-        item.innerHTML = unDato.author_name + ' - ' + '<button id="' + id + '" type="button" class="btn btn-primary btn-sm" onclick="llamadaIndividual(id)" data-bs-toggle="modal" data-bs-target="#elModal"> Ver Data </button>';
+        item.innerHTML = unDato.name + ' - ' + '<button id="' + id + '" type="button" class="btn btn-primary btn-sm" onclick="llamadaIndividual(id)" data-bs-toggle="modal" data-bs-target="#elModal"> Ver Data </button>';
         lista.appendChild(item);
     });
 
