@@ -1,12 +1,27 @@
-function colorChange() {
-    if (document.getElementById("navbar").className == "navbar bg-primary mb-5")
-        document.getElementById("navbar").className = "navbar bg-danger mb-5", document.getElementById("subBut").className = "btn btn-danger btn-lg", document.getElementById("foot").className = "footer mt-auto py-3 bg-danger text-white d-flex align-items-center justify-content-center", document.getElementById("tablaDesc").className = "table table-bordered table-hover border-danger", document.getElementById("botonContratar").className = "btn btn-danger btn-lg";
-    else
-        document.getElementById("navbar").className = "navbar bg-primary mb-5", document.getElementById("subBut").className = "btn btn-primary btn-lg", document.getElementById("foot").className = "footer mt-auto py-3 bg-primary text-white d-flex align-items-center justify-content-center", document.getElementById("tablaDesc").className = "table table-bordered table-hover border-primary", document.getElementById("botonContratar").className = "btn btn-primary btn-lg";
-};
+document.getElementById('subBut').addEventListener('click', function(event) {
+    event.preventDefault();
+    var name = document.getElementById('name').value;
+    var surname = document.getElementById('surname').value;
+    var age = document.getElementById('age').value;
+    var gender = document.querySelector('input[name="radioDefault1"]:checked').value;
+    var email = document.getElementById('email').value;
+    var problem = document.getElementById('info').value;
+    var city = document.getElementById('city').value;
+    var state = document.getElementById('state').value;
+    var cuotas = document.getElementById('cuotas').value;
+    var notifications = document.getElementById('notifCheck').checked;
 
-function cuotaNotZero() {
-    if (document.getElementById("cuotas").value <= 0) {
-        alert("la cantidad de cuotas no puede ser 0 o menor a 0");
-    }
-};
+    var formData = {
+      name: name,
+      surname: surname,
+      age: age,
+      gender: gender,
+      email: email,
+      problem: problem,
+      city: city,
+      state: state,
+      cuotas: cuotas,
+      notifications: notifications
+    };
+
+  });
